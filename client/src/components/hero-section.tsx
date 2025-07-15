@@ -43,7 +43,6 @@ export default function HeroSection() {
           className="absolute bottom-20 right-10 w-96 h-96 bg-portfolio-accent/10 rounded-full blur-3xl"
         />
       </div>
-      
       <div className="relative z-10 text-center max-w-4xl mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -142,7 +141,7 @@ export default function HeroSection() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.5 }}
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+          className="absolute bottom-8 left-1/2 transform -translate-x-1/2 ml-[0px] mr-[0px] mt-[29px] mb-[29px]"
         >
           <motion.div
             animate={{ y: [0, 10, 0] }}
