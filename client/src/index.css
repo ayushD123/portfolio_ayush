@@ -24,13 +24,13 @@
   --ring: hsl(20, 14.3%, 4.1%);
   --radius: 0.5rem;
   
-  /* Portfolio Custom Colors */
-  --portfolio-primary: hsl(235, 84%, 8%);
-  --portfolio-secondary: hsl(170, 100%, 70%);
-  --portfolio-bg-primary: hsl(215, 84%, 6%);
-  --portfolio-text-primary: hsl(222, 22%, 84%);
-  --portfolio-accent: hsl(32, 95%, 55%);
-  --portfolio-neutral: hsl(219, 14%, 63%);
+  /* Portfolio Custom Colors - Based on Brittany Chiang's Portfolio */
+  --portfolio-primary: 10, 14, 39;        /* #0A0E27 - Deep Navy */
+  --portfolio-secondary: 100, 255, 218;   /* #64FFDA - Cyan Accent */
+  --portfolio-bg-primary: 10, 25, 47;     /* #0A192F - Dark Blue Background */
+  --portfolio-text-primary: 204, 214, 246; /* #CCD6F6 - Light Blue-Grey */
+  --portfolio-accent: 247, 147, 30;       /* #F7931E - Golden Orange */
+  --portfolio-neutral: 136, 146, 176;     /* #8892B0 - Slate Grey */
 }
 
 .dark {
@@ -63,8 +63,8 @@
 
   body {
     @apply font-sans antialiased;
-    background-color: hsl(var(--portfolio-bg-primary));
-    color: hsl(var(--portfolio-text-primary));
+    background-color: rgb(var(--portfolio-bg-primary));
+    color: rgb(var(--portfolio-text-primary));
   }
   
   html {
@@ -74,42 +74,42 @@
 
 @layer components {
   .glassmorphism {
-    background: rgba(10, 14, 39, 0.7);
+    background: rgba(var(--portfolio-primary), 0.7);
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(100, 255, 218, 0.2);
+    border: 1px solid rgba(var(--portfolio-secondary), 0.2);
   }
   
   .gradient-text {
-    background: linear-gradient(45deg, hsl(var(--portfolio-secondary)), hsl(var(--portfolio-accent)));
+    background: linear-gradient(45deg, rgb(var(--portfolio-secondary)), rgb(var(--portfolio-accent)));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
   
   .hero-bg {
-    background: linear-gradient(135deg, hsl(215, 84%, 4%) 0%, hsl(235, 84%, 6%) 100%);
+    background: linear-gradient(135deg, rgb(var(--portfolio-bg-primary)) 0%, rgb(var(--portfolio-primary)) 100%);
   }
   
   .skill-bar {
-    background: linear-gradient(90deg, hsl(var(--portfolio-secondary)) 0%, hsl(var(--portfolio-accent)) 100%);
+    background: linear-gradient(90deg, rgb(var(--portfolio-secondary)) 0%, rgb(var(--portfolio-accent)) 100%);
   }
   
   .project-card {
     transition: all 0.3s ease;
-    background: rgba(10, 14, 39, 0.8);
+    background: rgba(var(--portfolio-primary), 0.8);
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(100, 255, 218, 0.1);
+    border: 1px solid rgba(var(--portfolio-secondary), 0.1);
   }
   
   .project-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(100, 255, 218, 0.1);
-    border-color: rgba(100, 255, 218, 0.3);
+    box-shadow: 0 20px 40px rgba(var(--portfolio-secondary), 0.1);
+    border-color: rgba(var(--portfolio-secondary), 0.3);
   }
   
   .typing-cursor::after {
     content: '|';
-    color: hsl(var(--portfolio-secondary));
+    color: rgb(var(--portfolio-secondary));
     animation: blink 1s infinite;
   }
   
@@ -130,34 +130,38 @@
 
 @layer utilities {
   .text-portfolio-primary {
-    color: hsl(var(--portfolio-primary));
+    color: rgb(var(--portfolio-primary));
   }
   
   .text-portfolio-secondary {
-    color: hsl(var(--portfolio-secondary));
+    color: rgb(var(--portfolio-secondary));
   }
   
   .text-portfolio-accent {
-    color: hsl(var(--portfolio-accent));
+    color: rgb(var(--portfolio-accent));
   }
   
   .text-portfolio-neutral {
-    color: hsl(var(--portfolio-neutral));
+    color: rgb(var(--portfolio-neutral));
+  }
+  
+  .text-portfolio-text-primary {
+    color: rgb(var(--portfolio-text-primary));
   }
   
   .bg-portfolio-primary {
-    background-color: hsl(var(--portfolio-primary));
+    background-color: rgb(var(--portfolio-primary));
   }
   
   .bg-portfolio-secondary {
-    background-color: hsl(var(--portfolio-secondary));
+    background-color: rgb(var(--portfolio-secondary));
   }
   
   .bg-portfolio-bg-primary {
-    background-color: hsl(var(--portfolio-bg-primary));
+    background-color: rgb(var(--portfolio-bg-primary));
   }
   
   .border-portfolio-secondary {
-    border-color: hsl(var(--portfolio-secondary));
+    border-color: rgb(var(--portfolio-secondary));
   }
 }
