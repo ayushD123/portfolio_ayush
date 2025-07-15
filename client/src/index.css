@@ -1,0 +1,163 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(0, 0%, 100%);
+  --foreground: hsl(20, 14.3%, 4.1%);
+  --muted: hsl(60, 4.8%, 95.9%);
+  --muted-foreground: hsl(25, 5.3%, 44.7%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(20, 14.3%, 4.1%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(20, 14.3%, 4.1%);
+  --border: hsl(20, 5.9%, 90%);
+  --input: hsl(20, 5.9%, 90%);
+  --primary: hsl(207, 90%, 54%);
+  --primary-foreground: hsl(211, 100%, 99%);
+  --secondary: hsl(60, 4.8%, 95.9%);
+  --secondary-foreground: hsl(24, 9.8%, 10%);
+  --accent: hsl(60, 4.8%, 95.9%);
+  --accent-foreground: hsl(24, 9.8%, 10%);
+  --destructive: hsl(0, 84.2%, 60.2%);
+  --destructive-foreground: hsl(60, 9.1%, 97.8%);
+  --ring: hsl(20, 14.3%, 4.1%);
+  --radius: 0.5rem;
+  
+  /* Portfolio Custom Colors */
+  --portfolio-primary: hsl(235, 84%, 10%);
+  --portfolio-secondary: hsl(170, 100%, 70%);
+  --portfolio-bg-primary: hsl(215, 84%, 12%);
+  --portfolio-text-primary: hsl(222, 22%, 84%);
+  --portfolio-accent: hsl(32, 95%, 55%);
+  --portfolio-neutral: hsl(219, 14%, 63%);
+}
+
+.dark {
+  --background: hsl(240, 10%, 3.9%);
+  --foreground: hsl(0, 0%, 98%);
+  --muted: hsl(240, 3.7%, 15.9%);
+  --muted-foreground: hsl(240, 5%, 64.9%);
+  --popover: hsl(240, 10%, 3.9%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --card: hsl(240, 10%, 3.9%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --border: hsl(240, 3.7%, 15.9%);
+  --input: hsl(240, 3.7%, 15.9%);
+  --primary: hsl(207, 90%, 54%);
+  --primary-foreground: hsl(211, 100%, 99%);
+  --secondary: hsl(240, 3.7%, 15.9%);
+  --secondary-foreground: hsl(0, 0%, 98%);
+  --accent: hsl(240, 3.7%, 15.9%);
+  --accent-foreground: hsl(0, 0%, 98%);
+  --destructive: hsl(0, 62.8%, 30.6%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(240, 4.9%, 83.9%);
+  --radius: 0.5rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased;
+    background-color: hsl(var(--portfolio-bg-primary));
+    color: hsl(var(--portfolio-text-primary));
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .glassmorphism {
+    background: rgba(100, 255, 218, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(100, 255, 218, 0.2);
+  }
+  
+  .gradient-text {
+    background: linear-gradient(45deg, hsl(var(--portfolio-secondary)), hsl(var(--portfolio-accent)));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .hero-bg {
+    background: linear-gradient(135deg, hsl(var(--portfolio-bg-primary)) 0%, hsl(var(--portfolio-primary)) 100%);
+  }
+  
+  .skill-bar {
+    background: linear-gradient(90deg, hsl(var(--portfolio-secondary)) 0%, hsl(var(--portfolio-accent)) 100%);
+  }
+  
+  .project-card {
+    transition: all 0.3s ease;
+    background: rgba(10, 14, 39, 0.6);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(100, 255, 218, 0.1);
+  }
+  
+  .project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(100, 255, 218, 0.1);
+    border-color: rgba(100, 255, 218, 0.3);
+  }
+  
+  .typing-cursor::after {
+    content: '|';
+    color: hsl(var(--portfolio-secondary));
+    animation: blink 1s infinite;
+  }
+  
+  @keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+  }
+  
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+}
+
+@layer utilities {
+  .text-portfolio-primary {
+    color: hsl(var(--portfolio-primary));
+  }
+  
+  .text-portfolio-secondary {
+    color: hsl(var(--portfolio-secondary));
+  }
+  
+  .text-portfolio-accent {
+    color: hsl(var(--portfolio-accent));
+  }
+  
+  .text-portfolio-neutral {
+    color: hsl(var(--portfolio-neutral));
+  }
+  
+  .bg-portfolio-primary {
+    background-color: hsl(var(--portfolio-primary));
+  }
+  
+  .bg-portfolio-secondary {
+    background-color: hsl(var(--portfolio-secondary));
+  }
+  
+  .bg-portfolio-bg-primary {
+    background-color: hsl(var(--portfolio-bg-primary));
+  }
+  
+  .border-portfolio-secondary {
+    border-color: hsl(var(--portfolio-secondary));
+  }
+}
