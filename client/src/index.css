@@ -25,9 +25,9 @@
   --radius: 0.5rem;
   
   /* Portfolio Custom Colors */
-  --portfolio-primary: hsl(235, 84%, 10%);
+  --portfolio-primary: hsl(235, 84%, 8%);
   --portfolio-secondary: hsl(170, 100%, 70%);
-  --portfolio-bg-primary: hsl(215, 84%, 12%);
+  --portfolio-bg-primary: hsl(215, 84%, 6%);
   --portfolio-text-primary: hsl(222, 22%, 84%);
   --portfolio-accent: hsl(32, 95%, 55%);
   --portfolio-neutral: hsl(219, 14%, 63%);
@@ -74,7 +74,7 @@
 
 @layer components {
   .glassmorphism {
-    background: rgba(100, 255, 218, 0.1);
+    background: rgba(10, 14, 39, 0.7);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(100, 255, 218, 0.2);
   }
@@ -87,7 +87,7 @@
   }
   
   .hero-bg {
-    background: linear-gradient(135deg, hsl(var(--portfolio-bg-primary)) 0%, hsl(var(--portfolio-primary)) 100%);
+    background: linear-gradient(135deg, hsl(215, 84%, 4%) 0%, hsl(235, 84%, 6%) 100%);
   }
   
   .skill-bar {
@@ -96,7 +96,7 @@
   
   .project-card {
     transition: all 0.3s ease;
-    background: rgba(10, 14, 39, 0.6);
+    background: rgba(10, 14, 39, 0.8);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(100, 255, 218, 0.1);
   }
