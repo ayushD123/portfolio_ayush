@@ -1,7 +1,6 @@
 import type { Express } from "express";
 import { createServer, type Server } from "http";
 import { z } from "zod";
-import { sendContactEmail } from "./email";
 
 const contactSchema = z.object({
   name: z.string().min(1, "Name is required"),
@@ -24,28 +23,16 @@ export async function registerRoutes(app: Express): Promise<Server> {
         timestamp: new Date().toISOString(),
       });
       
-      // Send email to site owner and confirmation to sender
-      const emailSent = await sendContactEmail({
-        name: validatedData.name,
-        email: validatedData.email,
-        subject: validatedData.subject,
-        message: validatedData.message,
+      // For FormSubmit.co integration, we just validate and respond
+      // The actual form submission will be handled directly by the frontend
+      res.status(200).json({
+        message: "Form validation successful",
+        data: {
+          name: validatedData.name,
+          email: validatedData.email,
+          timestamp: new Date().toISOString(),
+        },
       });
-      
-      if (emailSent) {
-        res.status(200).json({
-          message: "Message sent successfully! You'll receive a confirmation email shortly.",
-          data: {
-            name: validatedData.name,
-            email: validatedData.email,
-            timestamp: new Date().toISOString(),
-          },
-        });
-      } else {
-        res.status(500).json({
-          message: "Failed to send email. Please try again or contact me directly at ayushdixit244@gmail.com",
-        });
-      }
     } catch (error) {
       console.error("Contact form error:", error);
       
@@ -57,7 +44,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
       }
       
       res.status(500).json({
-        message: "Failed to send message. Please try again or contact me directly at ayushdixit244@gmail.com",
+        message: "Internal server error",
       });
     }
   });

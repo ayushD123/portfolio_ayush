@@ -13,47 +13,10 @@ export default function ContactSection() {
   const [isLoading, setIsLoading] = useState(false);
   const { toast } = useToast();
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     setIsLoading(true);
-
-    const formData = new FormData(e.currentTarget);
-    const data = {
-      name: formData.get('name') as string,
-      email: formData.get('email') as string,
-      subject: formData.get('subject') as string,
-      message: formData.get('message') as string,
-    };
-
-    try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data),
-      });
-
-      if (response.ok) {
-        const result = await response.json();
-        toast({
-          title: "Message sent successfully!",
-          description: result.message || "Thank you for reaching out. I'll get back to you soon.",
-        });
-        (e.target as HTMLFormElement).reset();
-      } else {
-        const errorResult = await response.json();
-        throw new Error(errorResult.message || 'Failed to send message');
-      }
-    } catch (error) {
-      toast({
-        title: "Failed to send message",
-        description: "Please try again or contact me directly via email.",
-        variant: "destructive",
-      });
-    } finally {
-      setIsLoading(false);
-    }
+    // FormSubmit.co will handle the form submission and redirect
+    // Show loading state while form is being processed
   };
 
   const contactInfo = [
@@ -186,7 +149,17 @@ export default function ContactSection() {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="glassmorphism p-6 rounded-xl"
           >
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form 
+              action="https://formsubmit.co/ayushdixit244@gmail.com" 
+              method="POST" 
+              onSubmit={handleSubmit} 
+              className="space-y-6"
+            >
+              {/* FormSubmit.co configuration */}
+              <input type="hidden" name="_subject" value="New Portfolio Contact Form Submission" />
+              <input type="hidden" name="_template" value="table" />
+              <input type="hidden" name="_captcha" value="false" />
+              
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-portfolio-text-primary mb-2">
                   Name
