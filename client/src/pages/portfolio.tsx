@@ -9,14 +9,18 @@ import ContactSection from "@/components/contact-section";
 export default function Portfolio() {
   useEffect(() => {
     document.title = "Ayush Dixit - Software Engineer Portfolio";
-    
+
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', 'Software Engineer at Oracle specializing in AI-powered solutions, full-stack development, and cloud technologies. View my projects and experience.');
+      metaDescription.setAttribute(
+        "content",
+        "Software Engineer at Oracle specializing in AI-powered solutions, full-stack development, and cloud technologies. View my projects and experience.",
+      );
     } else {
-      const meta = document.createElement('meta');
-      meta.name = 'description';
-      meta.content = 'Software Engineer at Oracle specializing in AI-powered solutions, full-stack development, and cloud technologies. View my projects and experience.';
+      const meta = document.createElement("meta");
+      meta.name = "description";
+      meta.content =
+        "Software Engineer at Oracle specializing in AI-powered solutions, full-stack development, and cloud technologies. View my projects and experience.";
       document.head.appendChild(meta);
     }
   }, []);
@@ -29,7 +33,7 @@ export default function Portfolio() {
       <SkillsSection />
       <ProjectsSection />
       <ContactSection />
-      
+
       {/* Footer */}
       <footer className="bg-portfolio-bg-primary py-8 border-t border-portfolio-neutral/20">
         <div className="max-w-6xl mx-auto px-4">
@@ -38,7 +42,7 @@ export default function Portfolio() {
               Built with ❤️ by Ayush Dixit
             </p>
             <p className="text-portfolio-neutral/60 text-sm">
-              © 2024 Ayush Dixit. All rights reserved.
+              © 2025 Ayush Dixit. All rights reserved.
             </p>
           </div>
         </div>

@@ -35,13 +35,15 @@ export default function ContactSection() {
       });
 
       if (response.ok) {
+        const result = await response.json();
         toast({
           title: "Message sent successfully!",
-          description: "Thank you for reaching out. I'll get back to you soon.",
+          description: result.message || "Thank you for reaching out. I'll get back to you soon.",
         });
         (e.target as HTMLFormElement).reset();
       } else {
-        throw new Error('Failed to send message');
+        const errorResult = await response.json();
+        throw new Error(errorResult.message || 'Failed to send message');
       }
     } catch (error) {
       toast({
