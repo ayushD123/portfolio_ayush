@@ -4,7 +4,7 @@ import { Github, Linkedin, Code, ArrowDown } from "lucide-react";
 
 export default function HeroSection() {
   const [displayText, setDisplayText] = useState("");
-  const fullText = "I build things for the web.";
+  const fullText = "I build things for fun.";
 
   useEffect(() => {
     let currentIndex = 0;
@@ -21,9 +21,9 @@ export default function HeroSection() {
   }, []);
 
   const scrollToAbout = () => {
-    const aboutSection = document.getElementById('about');
+    const aboutSection = document.getElementById("about");
     if (aboutSection) {
-      aboutSection.scrollIntoView({ behavior: 'smooth' });
+      aboutSection.scrollIntoView({ behavior: "smooth" });
     }
   };
 
@@ -39,7 +39,12 @@ export default function HeroSection() {
         />
         <motion.div
           animate={{ y: [0, -15, 0] }}
-          transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+          transition={{
+            duration: 4,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 1,
+          }}
           className="absolute bottom-20 right-10 w-96 h-96 bg-portfolio-accent/10 rounded-full blur-3xl"
         />
       </div>
@@ -57,7 +62,7 @@ export default function HeroSection() {
           >
             Hi, my name is
           </motion.p>
-          
+
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -66,7 +71,7 @@ export default function HeroSection() {
           >
             Ayush Dixit
           </motion.h1>
-          
+
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -75,17 +80,18 @@ export default function HeroSection() {
           >
             <span className="typing-cursor">{displayText}</span>
           </motion.h2>
-          
+
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8 }}
             className="text-lg md:text-xl text-portfolio-neutral mb-8 max-w-2xl mx-auto leading-relaxed"
           >
-            I'm a software engineer specializing in building exceptional digital experiences. 
-            Currently working at Oracle, creating AI-powered solutions for supply chain management.
+            I'm a software engineer specializing in building exceptional digital
+            experiences. Currently working at Oracle, creating AI-powered
+            solutions for supply chain management.
           </motion.p>
-          
+
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -95,7 +101,7 @@ export default function HeroSection() {
             <motion.a
               whileHover={{ scale: 1.2 }}
               whileTap={{ scale: 0.95 }}
-              href="https://github.com/ayushdixit244"
+              href="https://github.com/ayushD123"
               target="_blank"
               rel="noopener noreferrer"
               className="text-portfolio-text-primary hover:text-portfolio-secondary text-2xl transition-colors"
@@ -105,7 +111,7 @@ export default function HeroSection() {
             <motion.a
               whileHover={{ scale: 1.2 }}
               whileTap={{ scale: 0.95 }}
-              href="https://linkedin.com/in/ayushdixit244"
+              href="https://www.linkedin.com/in/ayush-dixit-302705203/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-portfolio-text-primary hover:text-portfolio-secondary text-2xl transition-colors"
@@ -115,7 +121,7 @@ export default function HeroSection() {
             <motion.a
               whileHover={{ scale: 1.2 }}
               whileTap={{ scale: 0.95 }}
-              href="https://leetcode.com/ayushdixit244"
+              href="https://leetcode.com/u/dungeon_master543/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-portfolio-text-primary hover:text-portfolio-secondary text-2xl transition-colors"
@@ -123,7 +129,7 @@ export default function HeroSection() {
               <Code size={32} />
             </motion.a>
           </motion.div>
-          
+
           <motion.button
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -136,7 +142,7 @@ export default function HeroSection() {
             Get to know me
           </motion.button>
         </motion.div>
-        
+
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}

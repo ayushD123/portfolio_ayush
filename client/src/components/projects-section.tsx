@@ -10,27 +10,33 @@ export default function ProjectsSection() {
   const projects = [
     {
       title: "Real-Time Delivery Tracking",
-      description: "A comprehensive delivery tracking application inspired by Zomato, built with Django and Kafka for seamless real-time data streaming.",
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=250",
+      description:
+        "A comprehensive delivery tracking application inspired by Zomato, built with Django and Kafka for seamless real-time data streaming.",
+      image:
+        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=250",
       technologies: ["Django", "Kafka", "Python", "WebSocket"],
-      githubUrl: "https://github.com/ayushdixit244",
+      githubUrl: "https://github.com/ayushD123",
       liveUrl: "#",
     },
     {
       title: "Driver Drowsiness Detection",
-      description: "An AI-powered system built with Python Flask to detect drowsy driving and mitigate road accidents through real-time monitoring.",
-      image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=250",
+      description:
+        "An AI-powered system built with Python Flask to detect drowsy driving and mitigate road accidents through real-time monitoring.",
+      image:
+        "https://images.unsplash.com/photo-1555949963-aa79dcee981c?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=250",
       technologies: ["Python", "Flask", "OpenCV", "AI/ML"],
-      githubUrl: "https://github.com/ayushdixit244",
+      githubUrl: "https://github.com/ayushD123",
       liveUrl: "#",
     },
     {
       title: "Task Management System",
-      description: "A responsive task management app built with Next.js 14 and TypeScript, featuring real-time updates and smooth animations.",
-      image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=250",
+      description:
+        "A responsive task management app built with Next.js 14 and TypeScript, featuring real-time updates and smooth animations.",
+      image:
+        "https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=250",
       technologies: ["Next.js", "TypeScript", "Tailwind", "Framer Motion"],
-      githubUrl: "https://github.com/ayushdixit244",
-      liveUrl: "#",
+      githubUrl: "https://github.com/ayushD123/task-management",
+      liveUrl: "https://task-management-dusky-delta.vercel.app/",
     },
   ];
 
@@ -44,11 +50,12 @@ export default function ProjectsSection() {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            <span className="text-portfolio-secondary">03.</span> Featured Projects
+            <span className="text-portfolio-secondary">03.</span> Featured
+            Projects
           </h2>
           <div className="w-24 h-1 bg-portfolio-secondary mx-auto"></div>
         </motion.div>
-        
+
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
             <motion.div
@@ -111,7 +118,7 @@ export default function ProjectsSection() {
             </motion.div>
           ))}
         </div>
-        
+
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -121,7 +128,7 @@ export default function ProjectsSection() {
           <motion.a
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            href="https://github.com/ayushdixit244"
+            href="https://github.com/ayushD123"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-transparent border-2 border-portfolio-secondary text-portfolio-secondary px-8 py-3 rounded-lg font-medium hover:bg-portfolio-secondary hover:text-portfolio-primary transition-all duration-300"

@@ -43,17 +43,17 @@ export default function ContactSection() {
   const socialLinks = [
     {
       icon: Github,
-      href: "https://github.com/ayushdixit244",
+      href: "https://github.com/ayushD123",
       label: "GitHub",
     },
     {
       icon: Linkedin,
-      href: "https://linkedin.com/in/ayushdixit244",
+      href: "https://www.linkedin.com/in/ayush-dixit-302705203/",
       label: "LinkedIn",
     },
     {
       icon: Code,
-      href: "https://leetcode.com/ayushdixit244",
+      href: "https://leetcode.com/u/dungeon_master543/",
       label: "LeetCode",
     },
   ];
@@ -72,11 +72,12 @@ export default function ContactSection() {
           </h2>
           <div className="w-24 h-1 bg-portfolio-secondary mx-auto mb-6"></div>
           <p className="text-lg text-portfolio-neutral max-w-2xl mx-auto">
-            I'm always open to discussing new opportunities, interesting projects, or just having a chat about technology. 
-            Feel free to reach out if you'd like to connect!
+            I'm always open to discussing new opportunities, interesting
+            projects, or just having a chat about technology. Feel free to reach
+            out if you'd like to connect!
           </p>
         </motion.div>
-        
+
         <div className="grid md:grid-cols-2 gap-12">
           {/* Contact Info */}
           <motion.div
@@ -100,7 +101,9 @@ export default function ContactSection() {
                       <IconComponent className="w-6 h-6 text-portfolio-secondary" />
                     </div>
                     <div>
-                      <h3 className="text-lg font-bold text-portfolio-text-primary">{info.title}</h3>
+                      <h3 className="text-lg font-bold text-portfolio-text-primary">
+                        {info.title}
+                      </h3>
                       {info.href !== "#" ? (
                         <a
                           href={info.href}
@@ -116,7 +119,7 @@ export default function ContactSection() {
                 </motion.div>
               );
             })}
-            
+
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -141,7 +144,7 @@ export default function ContactSection() {
               })}
             </motion.div>
           </motion.div>
-          
+
           {/* Contact Form */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
@@ -149,19 +152,26 @@ export default function ContactSection() {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="glassmorphism p-6 rounded-xl"
           >
-            <form 
-              action="https://formsubmit.co/ayushdixit244@gmail.com" 
-              method="POST" 
-              onSubmit={handleSubmit} 
+            <form
+              action="https://formsubmit.co/ayushdixit244@gmail.com"
+              method="POST"
+              onSubmit={handleSubmit}
               className="space-y-6"
             >
               {/* FormSubmit.co configuration */}
-              <input type="hidden" name="_subject" value="New Portfolio Contact Form Submission" />
+              <input
+                type="hidden"
+                name="_subject"
+                value="New Portfolio Contact Form Submission"
+              />
               <input type="hidden" name="_template" value="table" />
               <input type="hidden" name="_captcha" value="false" />
-              
+
               <div>
-                <label htmlFor="name" className="block text-sm font-medium text-portfolio-text-primary mb-2">
+                <label
+                  htmlFor="name"
+                  className="block text-sm font-medium text-portfolio-text-primary mb-2"
+                >
                   Name
                 </label>
                 <Input
@@ -173,9 +183,12 @@ export default function ContactSection() {
                   placeholder="Your name"
                 />
               </div>
-              
+
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-portfolio-text-primary mb-2">
+                <label
+                  htmlFor="email"
+                  className="block text-sm font-medium text-portfolio-text-primary mb-2"
+                >
                   Email
                 </label>
                 <Input
@@ -187,9 +200,12 @@ export default function ContactSection() {
                   placeholder="your.email@example.com"
                 />
               </div>
-              
+
               <div>
-                <label htmlFor="subject" className="block text-sm font-medium text-portfolio-text-primary mb-2">
+                <label
+                  htmlFor="subject"
+                  className="block text-sm font-medium text-portfolio-text-primary mb-2"
+                >
                   Subject
                 </label>
                 <Input
@@ -201,9 +217,12 @@ export default function ContactSection() {
                   placeholder="What's this about?"
                 />
               </div>
-              
+
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-portfolio-text-primary mb-2">
+                <label
+                  htmlFor="message"
+                  className="block text-sm font-medium text-portfolio-text-primary mb-2"
+                >
                   Message
                 </label>
                 <Textarea
@@ -215,7 +234,7 @@ export default function ContactSection() {
                   placeholder="Tell me about your project or just say hi!"
                 />
               </div>
-              
+
               <Button
                 type="submit"
                 disabled={isLoading}
