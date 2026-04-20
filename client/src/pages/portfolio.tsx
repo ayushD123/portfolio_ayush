@@ -42,7 +42,7 @@ export default function Portfolio() {
               Built with ❤️ by Ayush Dixit
             </p>
             <p className="text-portfolio-neutral/60 text-sm">
-              © 2025 Ayush Dixit. All rights reserved.
+              © 2026 Ayush Dixit. All rights reserved.
             </p>
           </div>
         </div>
