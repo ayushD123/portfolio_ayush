@@ -7,9 +7,9 @@ export default function AboutSection() {
   const isInView = useInView(ref, { once: true, amount: 0.3 });
 
   const stats = [
-    { label: "Years Experience", value: "1+" },
+    { label: "Years Experience", value: "1.5+" },
     { label: "APIs Built", value: "50+" },
-    { label: "Data Migrated", value: "2500GB+" },
+    { label: "Bugs Fixed", value: "100+" },
     { label: "AI Agent Developed", value: "5+" },
   ];
 
@@ -44,9 +44,8 @@ export default function AboutSection() {
               Currently, I'm working as an Associate Engineer at{" "}
               <span className="text-portfolio-secondary">Oracle</span> , where I
               develop AI-powered solutions for supply chain management. I've
-              engineered systems that analyze thousands of purchase orders in
-              real-time and built scalable ETL pipelines processing over 250 GB
-              of data daily.
+              engineered systems that analyze thousands of transactions in
+              real-time and built scalable ai solutions focused on automations and AI workflows.
             </p>
             <p className="text-lg text-portfolio-neutral mb-6 leading-relaxed">
               I'm also a{" "}
